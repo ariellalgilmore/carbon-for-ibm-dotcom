@@ -77,9 +77,10 @@ describe('cds-locale-modal | default', () => {
     const closeButton = cy
       .get('cds-locale-modal')
       .shadow()
-      .find('cds-expressive-modal-close-button');
-    closeButton
+      .find('c4d-expressive-modal-close-button')
       .shadow()
+      .find('button');
+    closeButton
       .find('svg path')
       .then($icon => {
         expect($icon).to.have.attr(

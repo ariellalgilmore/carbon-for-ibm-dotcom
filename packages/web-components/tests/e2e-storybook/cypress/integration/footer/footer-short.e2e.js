@@ -1,5 +1,5 @@
 /**
- * Copyright IBM Corp. 2021, 2022
+ * Copyright IBM Corp. 2021, 2023
  *
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
@@ -95,10 +95,16 @@ describe('c4d-footer | Short (desktop)', () => {
       .find('cds-search')
       .shadow()
       .find('input')
-      .type('gu')
-      .get('[country="Brazil (Brasil)"]')
-      .should('not.have.attr', 'hidden')
-      .get('[country="Guyana"]')
+      .type('gu', {
+        force: true,
+      });
+
+    cy.get('@search')
+      .find('[country="Brazil (Brasil)"]')
+      .should('not.have.attr', 'hidden');
+
+    cy.get('@search')
+      .find('[country="Guyana"]')
       .should('not.have.attr', 'hidden');
 
     cy.takeSnapshots();
@@ -208,10 +214,16 @@ describe('c4d-footer | Short (mobile)', () => {
       .find('cds-search')
       .shadow()
       .find('input')
-      .type('gu')
-      .get('[country="Brazil (Brasil)"]')
-      .should('not.have.attr', 'hidden')
-      .get('[country="Guyana"]')
+      .type('gu', {
+        force: true,
+      });
+
+    cy.get('@search')
+      .find('[country="Brazil (Brasil)"]')
+      .should('not.have.attr', 'hidden');
+
+    cy.get('@search')
+      .find('[country="Guyana"]')
       .should('not.have.attr', 'hidden');
 
     cy.takeSnapshots('mobile');

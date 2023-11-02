@@ -54,8 +54,7 @@ describe('cds-filter-panel | (desktop)', () => {
     // Check box on desktop
     cy.visit(_path)
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .click()
       .find('cds-filter-panel-checkbox')
@@ -86,8 +85,7 @@ describe('cds-filter-panel | (desktop)', () => {
     // Check box on desktop
     cy.visit(_path)
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .eq(1)
       .click()
       .find('cds-filter-panel-input-select')
@@ -117,8 +115,7 @@ describe('cds-filter-panel | (desktop)', () => {
       `${_path}&knob-Filter%20cutoff=1&knob-Max%20filters=1&knob-Number%20of%20selected%20items=0`
     )
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .as('filterGroupItem')
       .click()
@@ -132,8 +129,7 @@ describe('cds-filter-panel | (desktop)', () => {
       `${_path}&knob-Max%20filters=${filterCount}&knob-Number%20of%20selected%20items=0`
     )
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .click()
       .find('.cds-filter-group-item__view-all')
@@ -145,8 +141,7 @@ describe('cds-filter-panel | (desktop)', () => {
 
     cy.visit(`${_path}&knob-View%20all%20text=${customText}`)
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .click()
       .find('.cds-filter-group-item__view-all')
@@ -157,8 +152,7 @@ describe('cds-filter-panel | (desktop)', () => {
   it('should re-hide excess elements when filter groups are closed and reopened', () => {
     cy.visit(_path)
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .as('filterGroupItem')
       .shadow()
@@ -183,8 +177,7 @@ describe('cds-filter-panel | (desktop)', () => {
   it('should not re-hide elements when an element that would be hidden has been selected', () => {
     cy.visit(_path)
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .as('filterGroupItem')
       .shadow()
@@ -241,8 +234,7 @@ describe('cds-filter-panel | (mobile)', () => {
     // Switch to desktop and verify box is checked
     cy.viewport(..._viewportWidths['desktop'])
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .first()
       .find('cds-filter-panel-checkbox')
       .first()
@@ -270,8 +262,7 @@ describe('cds-filter-panel | (mobile)', () => {
     // Switch to desktop and verify box is checked
     cy.viewport(..._viewportWidths['desktop'])
       .get(_selector)
-      .shadow()
-      .find('cds-filter-group-item')
+      .find('c4d-filter-group-item')
       .eq(1)
       .find('cds-filter-panel-input-select')
       .first()

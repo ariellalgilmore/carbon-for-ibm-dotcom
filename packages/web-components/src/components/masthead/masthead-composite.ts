@@ -1378,6 +1378,7 @@ class C4DMastheadComposite extends HostListenerMixin(LitElement) {
       menuButtonAssistiveTextActive,
       menuButtonAssistiveTextInactive,
       navLinks,
+      customNavLinks,
       language,
       openSearchDropdown,
       hasSearch,
